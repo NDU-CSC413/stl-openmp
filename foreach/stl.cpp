@@ -59,14 +59,14 @@ int main()
 	TIMEIT(seq_d,
 		std::transform( v.begin(), v.end(), v.begin(),
 			[](double& x) {
-				return  x / 2.0;
+				return  x / 7.0;
 			}
 	);
 	)
 	TIMEIT(par_d,
 			std::transform(std::execution::par, v.begin(), v.end(), v.begin(),
 				[](double& x) {
-					return  x / 2.0;
+					return  x / 7.0;
 				}
 			);
 	)
@@ -91,6 +91,25 @@ int main()
 		);
 	)
 	std::cout << "generate " << seq_d.count() << "\t" << par_d.count() << "\n";
+	/* reverse */
+
+	TIMEIT(seq_d,
+		std::reverse(u.begin(), u.end());
+	)
+		TIMEIT(par_d,
+			std::reverse(std::execution::par, v.begin(), v.end());
+	)
+		std::cout << "reverse " << seq_d.count() << "\t" << par_d.count() << "\n";
+	/* maximum */
+	double seq_max, par_max;
+	TIMEIT(seq_d,
+		seq_max=*std::max_element(v.begin(), v.end());
+	)
+		TIMEIT(par_d,
+		par_max=*std::max_element(std::execution::par, v.begin(), v.end());
+	)
+		std::cout << "max_element " << seq_d.count() << "\t" << par_d.count() << "\n";
+	if (seq_max != par_max)std::cout << "error\n";
 
 	/* std::sort  */
 
@@ -119,5 +138,6 @@ int main()
 				}
 	);
 	)
-		std::cout << "count_if " << seq_d.count() << "\t" << par_d.count() << "\t"<<seq_r<<par_r<<"\n";
+		std::cout << "count_if " << seq_d.count() << "\t" << par_d.count()<<"\n";
+	if (seq_r != par_r)std::cout << "error\n";
 }
