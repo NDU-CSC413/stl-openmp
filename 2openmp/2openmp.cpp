@@ -1,5 +1,10 @@
-// openmp1-1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*****************************************************************//**
+ * @file   2openmp.cpp
+ * @brief  First intro to openmp
+ * 
+ * @author Hikmat Farhat
+ * @date   April 2021
+ *********************************************************************/
 
 #include <iostream>
 #include <omp.h>

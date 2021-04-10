@@ -5,21 +5,21 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openmp", "openmp.vcxproj", "{A4E3102F-BE5C-4386-B943-264DEA6FF1BE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openmp1-1", "openmp1-1\openmp1-1.vcxproj", "{21275C1D-AF7B-4C4E-BFFD-22C8C689F831}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2openmp", "2openmp\2openmp.vcxproj", "{21275C1D-AF7B-4C4E-BFFD-22C8C689F831}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openmp1-2", "openmp1-2\openmp1-2.vcxproj", "{DF22725F-B129-49AA-AA2E-EC500748A493}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3openmp", "3openmp\3openmp.vcxproj", "{DF22725F-B129-49AA-AA2E-EC500748A493}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openmp1-3", "openmp1-3\openmp1-3.vcxproj", "{8B44F190-4880-42D7-8EEB-89D9C957B01F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5openmp", "5openmp\5openmp.vcxproj", "{8B44F190-4880-42D7-8EEB-89D9C957B01F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "false_sharing", "false_sharing\false_sharing.vcxproj", "{80AE1858-B63F-490D-B828-E1D96A11F0C0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4false_sharing", "4false_sharing\4false_sharing.vcxproj", "{80AE1858-B63F-490D-B828-E1D96A11F0C0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "quicksort", "quicksort\quicksort.vcxproj", "{791378FB-8017-4445-86D1-CB765DF87EE8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prime", "prime\prime.vcxproj", "{33128E2D-12F3-429C-8050-32A5A09B7C53}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj", "{09104031-6B29-43D6-A93A-C08F79E2F477}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "6openmp", "6openmp\6openmp.vcxproj", "{09104031-6B29-43D6-A93A-C08F79E2F477}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foreach", "foreach\foreach.vcxproj", "{631C8732-514A-42EC-86A6-FCFDA620710B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stl", "stl\stl.vcxproj", "{631C8732-514A-42EC-86A6-FCFDA620710B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

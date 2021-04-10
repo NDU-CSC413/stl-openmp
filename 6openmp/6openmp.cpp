@@ -1,6 +1,10 @@
-// prime.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+/*****************************************************************//**
+ * @file   6openmp.cpp
+ * @brief  openmp schedule
+ * 
+ * @author Hikmat Farhat
+ * @date   April 2021
+ *********************************************************************/
 #include <iostream>
 #include <chrono>
 #include <thread>
@@ -18,11 +22,11 @@ using Duration = std::chrono::duration<double, std::milli>;
 const int n = 800000;
 const int step = 10000;
 
-int parPrime(int n) {
+int dynamic(int n) {
    
 #pragma omp parallel 
     {
-#pragma omp for //schedule (dynamic)
+#pragma omp for schedule (dynamic)
         for (int j = 1; j <=     n; ++j) {
             std::this_thread::sleep_for(std::chrono::milliseconds(100*j));
         }
@@ -34,7 +38,7 @@ int main()
     Duration d;
     int res;
     TIMEIT(d,
-        res=parPrime(32);
+        res=dynamic(32);
     )
         std::cout << res << " " << d.count() << "\n";
 }

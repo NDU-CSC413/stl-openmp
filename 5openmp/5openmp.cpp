@@ -1,11 +1,10 @@
 /*****************************************************************//**
- * @file   openmp1-3.cpp
- * @brief  Computing PI using parallel for in  OpenMP
- *
+ * @file   5openmp.cpp
+ * @brief  openmp for construct
+ * 
  * @author Hikmat Farhat
  * @date   April 2021
  *********************************************************************/
-
 #include <iostream>
 #include <vector>
 #include <algorithm>

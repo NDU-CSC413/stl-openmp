@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="openmp1-3.cpp">
+    <ClCompile Include="2openmp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

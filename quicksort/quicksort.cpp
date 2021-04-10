@@ -1,5 +1,10 @@
-// quicksort.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*****************************************************************//**
+ * @file   quicksort.cpp
+ * @brief  quicksort using openmp tasks
+ * 
+ * @author Hikmat Farhat
+ * @date   April 2021
+ *********************************************************************/
 
 #include <iostream>
 #include <vector>

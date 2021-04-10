@@ -1,11 +1,10 @@
 /*****************************************************************//**
- * @file   openmp1-2.cpp
- * @brief  Computing PI using OpenMP
+ * @file   3openmp.cpp
+ * @brief  Computing PI using openmp
  * 
  * @author Hikmat Farhat
  * @date   April 2021
  *********************************************************************/
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
