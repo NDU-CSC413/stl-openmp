@@ -19,40 +19,26 @@ using Duration = std::chrono::duration<double, std::milli>;
      dur = std::chrono::duration<double, std::milli>(end - start);\
 }
 
-struct Sin {
-	int terms;
-	Sin(int t = 5) :terms(t) {}
-
-	void operator()(double& a) {
-
-		double x = a;
-		double value = x;
-		double num = x * x * x;
-		double denom = 6;
-		int sign = -1;
-		for (int j = 1; j <= terms; ++j) {
-			value += sign * num / denom;
-			num *= x * x;
-			denom *= (2 * j + 2) * (2 * j + 3);
-			sign *= -1;
-		}
-		a = value;
-
-	}
-};
 int main()
 {
 	const int n = 1 << 24;
-	Sin sine(5);
 	std::vector<double> u(n), v(n);
 	Duration seq_d,par_d;
 	std::fill(v.begin(), v.end(), 1.0);
 	/* std::for_each */
 	TIMEIT(seq_d,
-		std::for_each( v.begin(), v.end(),sine);
+		std::for_each( v.begin(), v.end(),
+			[](double& x) {
+				return  x /= 7.0;
+			}
+		);
 	)
 	TIMEIT(par_d,
-		std::for_each(std::execution::par, v.begin(), v.end(), sine);
+		std::for_each(std::execution::par, v.begin(), v.end(),
+			[](double& x) {
+				return  x /= 7.0;
+			}
+		);
 	)
 	std::cout <<"for_each " <<seq_d.count()<<"\t"<<par_d.count() << "\n";
 	/* std::transofrm */

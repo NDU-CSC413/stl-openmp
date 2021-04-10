@@ -38,7 +38,6 @@ void seqQuicksort(Iter start, Iter end) {
 #pragma omp task
 				seqQuicksort(start, mid);
 			}
-		
 	}
 }
 int main()

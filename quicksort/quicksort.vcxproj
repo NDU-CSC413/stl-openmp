@@ -24,6 +24,7 @@
     <ProjectGuid>{791378fb-8017-4445-86d1-cb765df87ee8}</ProjectGuid>
     <RootNamespace>quicksort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>8openmp-task(quicksort)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
