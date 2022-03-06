@@ -20,9 +20,9 @@ using Duration = std::chrono::duration<double, std::milli>;
 #define NOT_APPL -2
 #define NOT_SET -1
 
-int num_threads = 8;
+int num_threads = 1;
 // number of nodes
-const int m = 1 << 13;
+const int m = 1 << 12;
 const int n = m * m;
 //adjacency list
 std::vector<std::list<int>> adj(n);
@@ -88,13 +88,10 @@ int main()
     double total = 0;
     int num_trials = 10;
     for (int t = 0; t < num_trials; ++t) {
-       // for (int i = 0; i < dist.size(); ++i) {
-            std::fill(dist.begin(), dist.end(), std::numeric_limits<int>::max());
-            //dist[i] = std::numeric_limits<int>::max();
-            std::fill(parent.begin(), parent.end(), NOT_SET);
-//            parent[i] = NOT_SET;
 
-//        }
+		std::fill(dist.begin(), dist.end(), std::numeric_limits<int>::max());
+		std::fill(parent.begin(), parent.end(), NOT_SET);
+
         Duration dur;
         auto clock_start = std::chrono::high_resolution_clock::now();
 
@@ -104,8 +101,8 @@ int main()
         total += dur.count();
     }
     std::cout << "Grid size " << m << "X" << m << "\n";
-    std::cout << " Number of threads " << num_threads << "\n";
-    std::cout << "average duration = " << total / num_trials << "\n";
+    std::cout << "Number of threads " << num_threads << "\n";
+    std::cout << "Average duration = " << total / num_trials << "\n";
     for (int i = 0; i < 5; ++i) {
         std::cout << "distance of " << i << " is " << dist[i] << "\n";
     }
