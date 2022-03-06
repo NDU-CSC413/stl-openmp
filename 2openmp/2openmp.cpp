@@ -12,6 +12,7 @@
 int main()
 {
 	omp_set_num_threads(4);
+	// the omp parallel pragma has "scope" everything inside the braces
 #pragma omp parallel 
 	{
 		int num_threads = omp_get_num_threads();
@@ -19,5 +20,5 @@ int main()
 		int id = omp_get_thread_num();
 		if (id == 0)std::cout << "actual number of threads " << num_threads << "\n";
 		std::cout << "hello from thread "<<id<<"\n";
-		}
+	}
 }

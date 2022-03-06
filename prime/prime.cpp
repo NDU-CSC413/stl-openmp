@@ -14,7 +14,7 @@ using Duration = std::chrono::duration<double, std::milli>;
      dur = std::chrono::duration<double, std::milli>(end - start);\
 }
 
-const int n = 800000;
+const int n = 400000;
 const int step = 10000;
 
 int seqPrime(int n) {

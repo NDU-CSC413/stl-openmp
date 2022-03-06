@@ -11,6 +11,18 @@
 #include <random>
 #include <algorithm>
 #include <omp.h>
+#include <chrono>
+#include <execution>
+
+using Duration = std::chrono::duration<double, std::milli>;
+
+#define TIMEIT(dur,...)\
+   {\
+    auto clock_start = std::chrono::high_resolution_clock::now();\
+    __VA_ARGS__\
+    auto clock_end = std::chrono::high_resolution_clock::now();\
+     dur = std::chrono::duration<double, std::milli>(clock_end - clock_start);\
+}
 const int n = 1 << 24;
 const int cutoff = 1 << 18;
 template <typename Iter>
@@ -49,6 +61,7 @@ int main()
 {
 	
 	std::vector<float> v(n);
+
 	std::random_device rd;
 	std::uniform_real_distribution<float> dist(1, 100);
 	std::generate(v.begin(), v.end(),
@@ -56,7 +69,7 @@ int main()
 			return dist(rd);
 		}
 		);
-	
+	std::vector<float> u = v;
 	std::cout << "omp start\n";
 	double d = omp_get_wtime();
 #pragma omp parallel
@@ -68,4 +81,11 @@ int main()
 
 	std::cout <<"is sorted="<< std::is_sorted(v.begin(), v.end());
 	std::cout << "\n" << 1000*d << "\n";
+	Duration dur;
+
+	TIMEIT(dur,
+		std::sort(std::execution::par, u.begin(), u.end());
+	)
+		std::cout << std::is_sorted(u.begin(), u.end());
+	std::cout << "std::sort(parallel) " << dur.count() << "\n";
 }

@@ -23,11 +23,11 @@ const int n = 800000;
 const int step = 10000;
 
 int dynamic(int n) {
-   
+    omp_set_num_threads(4);
 #pragma omp parallel 
     {
 #pragma omp for schedule (dynamic)
-        for (int j = 1; j <=     n; ++j) {
+        for (int j = 1; j <= n; ++j) {
             std::this_thread::sleep_for(std::chrono::milliseconds(100*j));
         }
     }
@@ -38,7 +38,7 @@ int main()
     Duration d;
     int res;
     TIMEIT(d,
-        res=dynamic(32);
+        res=dynamic(16);
     )
         std::cout << res << " " << d.count() << "\n";
 }

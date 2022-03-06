@@ -21,7 +21,7 @@ using Duration = std::chrono::duration<double, std::milli>;
 
 int main()
 {
-	const int n = 1 << 24;
+	const int n = 1 << 22;
 	std::vector<double> u(n), v(n);
 	Duration seq_d,par_d;
 	std::fill(v.begin(), v.end(), 1.0);
@@ -77,7 +77,7 @@ int main()
 		);
 	)
 	std::cout << "generate " << seq_d.count() << "\t" << par_d.count() << "\n";
-	/* reverse */
+	///* reverse */
 
 	TIMEIT(seq_d,
 		std::reverse(u.begin(), u.end());
