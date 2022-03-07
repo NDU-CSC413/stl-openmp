@@ -18,7 +18,7 @@ void pi(double stepsize, int from, int to, double& res) {
 		midpoint = (i + 0.5) * stepsize;
 		sum += 1.0 / (1 + midpoint * midpoint);
 	}
-	res += 4.0 * stepsize * sum;
+	res = 4.0 * stepsize * sum;
 }
 
 int main()
