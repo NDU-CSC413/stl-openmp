@@ -52,6 +52,7 @@ int parPrime(int n) {
     bool p;
 #pragma omp parallel private(i,p)
     {
+        
 #pragma omp for reduction(+:count) schedule (dynamic,100)
         for (j = 2; j < n; ++j) {
             p = true;

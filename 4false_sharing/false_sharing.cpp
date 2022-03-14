@@ -18,7 +18,7 @@
 #include <numeric>
 #include <omp.h>
 
-#define LOCAL
+//#define LOCAL
 //#define FALSE_SHARING
 //#define ALIGN
 

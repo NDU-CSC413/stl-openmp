@@ -36,11 +36,9 @@ int main()
 
 #pragma omp parallel 
 	{
-//#pragma omp for reduction(+:sum)
 #pragma omp for
 			for (int i = 0; i <num_steps; ++i) {
 				midpoint = (i + 0.5) * dx;
-//#pragma omp critical
 				sum += 1.0 / (1 + midpoint * midpoint);
 			}
 	}
