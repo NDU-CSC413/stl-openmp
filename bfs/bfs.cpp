@@ -20,7 +20,7 @@ using Duration = std::chrono::duration<double, std::milli>;
 #define NOT_APPL -2
 #define NOT_SET -1
 
-int num_threads = 1;
+int num_threads = 4;
 // number of nodes
 const int m = 1 << 12;
 const int n = m * m;
@@ -43,6 +43,7 @@ void bfs() {
         {
             //must be here for openmp to create a queue for each thread
             std::vector<int> queueP;
+            //at this point we have 8 concurrent threads, each having its own queueP
 
 #pragma omp for 
             for (int i = 0; i < queue.size(); ++i) {
@@ -55,9 +56,13 @@ void bfs() {
                     }
                 }
             }//implicit barrier here
+            // at this point all threads have finishe processing their assigned range
+            // an put the resul in their local queue, queueP
             int id = omp_get_thread_num();
-            if (id == 0)queue.clear();
-#pragma omp barrier
+            //if (id == 0)queue.clear();
+#pragma omp single
+            queue.clear();
+//#pragma omp barrier
 #pragma omp critical
             {
                 queue.insert(queue.end(), queueP.begin(), queueP.end());

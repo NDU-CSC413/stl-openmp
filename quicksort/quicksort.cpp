@@ -24,7 +24,7 @@ using Duration = std::chrono::duration<double, std::milli>;
      dur = std::chrono::duration<double, std::milli>(clock_end - clock_start);\
 }
 const int n = 1 << 24;
-const int cutoff = 1 << 18;
+const int cutoff = 1 <<18;
 template <typename Iter>
 Iter partition(Iter start, Iter end) {
 	/* assume the input is random and select the
@@ -49,9 +49,9 @@ void seqQuicksort(Iter start, Iter end) {
 				std::sort(start, end);
 			}
 			else {
-				Iter mid = partition(start, end);
+				Iter mid = partition(start, end);// [start,end)
 #pragma omp task
-				seqQuicksort(mid + 1, end);
+				seqQuicksort(mid+1, end);
 #pragma omp task
 				seqQuicksort(start, mid);
 			}

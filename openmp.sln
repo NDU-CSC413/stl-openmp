@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bfs", "bfs\bfs.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tmp", "tmp\tmp.vcxproj", "{B748D9B2-5412-4511-8590-B931EA327C2E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dijkstra", "dijkstra\dijkstra.vcxproj", "{B257319A-4434-46AA-9D1F-F0BA22C0878E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{B748D9B2-5412-4511-8590-B931EA327C2E}.Release|x64.Build.0 = Release|x64
 		{B748D9B2-5412-4511-8590-B931EA327C2E}.Release|x86.ActiveCfg = Release|Win32
 		{B748D9B2-5412-4511-8590-B931EA327C2E}.Release|x86.Build.0 = Release|Win32
+		{B257319A-4434-46AA-9D1F-F0BA22C0878E}.Debug|x64.ActiveCfg = Debug|x64
+		{B257319A-4434-46AA-9D1F-F0BA22C0878E}.Debug|x64.Build.0 = Debug|x64
+		{B257319A-4434-46AA-9D1F-F0BA22C0878E}.Debug|x86.ActiveCfg = Debug|Win32
+		{B257319A-4434-46AA-9D1F-F0BA22C0878E}.Debug|x86.Build.0 = Debug|Win32
+		{B257319A-4434-46AA-9D1F-F0BA22C0878E}.Release|x64.ActiveCfg = Release|x64
+		{B257319A-4434-46AA-9D1F-F0BA22C0878E}.Release|x64.Build.0 = Release|x64
+		{B257319A-4434-46AA-9D1F-F0BA22C0878E}.Release|x86.ActiveCfg = Release|Win32
+		{B257319A-4434-46AA-9D1F-F0BA22C0878E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
